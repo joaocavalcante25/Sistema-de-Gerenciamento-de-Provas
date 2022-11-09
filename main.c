@@ -1,6 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void carregaArquivos()
+{
+    
+}
+
+void gerarInfoCandidatos()
+{
+
+}
+
+void pesquisarCandidatos()
+{
+
+}
+
+void geraraInfoCandidatosReprovados()
+{
+
+}
+
+void alterarNotaRedacao()
+{
+
+}
 
 int main() {
     int input = -1;
@@ -24,21 +48,26 @@ int main() {
             case 0:
                 /* code */
                 arquivos_carregados = 1;
+                carregaArquivos();
                 break;
             case 1:
+                gerarInfoCandidatos();
                 break;
             case 2:
+                pesquisarCandidatos();
                 break;
             case 3:
+                geraraInfoCandidatosReprovados();
                 break;
             case 4:
+                alterarNotaRedacao();
                 break;
             default:
                 break;
-        }
-        
+        }  
+
     }
-    
-    
+
+
     return 0;
 }
