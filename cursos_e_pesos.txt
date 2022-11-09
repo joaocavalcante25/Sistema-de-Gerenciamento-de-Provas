@@ -1,0 +1,2 @@
+Código, Nome Curso, Red, Mat, Lin, Hum, Nat,
+547, ADMINISTRAÇÃO - BACHARELADO, 2, 1, 2, 1, 1,
