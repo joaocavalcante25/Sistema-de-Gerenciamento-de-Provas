@@ -1,32 +1,66 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-void carregaArquivos()
-{
-    
-}
-
-void gerarInfoCandidatos()
-{
+void carregaArquivos(){
 
 }
 
-void pesquisarCandidatos()
-{
+void print(char string[100]){
+    int count = 0;
+    for (int i = 0; i < strlen(string)-1; i++){
+        if (string[i] != ','){
+            printf("%c",string[i]);
+        }     
+    }
+    printf("\n\n");
+}
+
+void gerarInfoCandidatos(){
 
 }
 
-void geraraInfoCandidatosReprovados()
-{
+void pesquisarCandidatos(){
+    FILE *arquivo;
+    char linha[100], *id, result[100];
+    int i, input, output, achou;
+    input = -1;
+    printf("VOCÊ ENTROU NO MENU DE PESQUISA...\n\n\n");
+    while (input != 0){
+        printf("INFORME A MATRICULA DO CANDIDATO OU 0 PARA ENCERRAR A PESQUISA: ");
+        scanf("%d", &input);
+        arquivo = fopen("dados.txt", "r");
+        if (arquivo == NULL){
+            printf("Problema na abertura do arquivo\n");    
+            return;
+        }
+        achou = -1;
+        i = 0;
+        while(!feof(arquivo) && achou != 0){
+            fgets(linha, 100, arquivo);
+            strcpy(result, linha);
+            id  = strtok(linha, ",");
+            output = strtol(id, NULL, 10);
+            if(output == input && i > 0){
+                print(result);
+                achou = 0;
+            }
+            i++;
+        } 
+        fclose(arquivo);
+    }
+    fclose(arquivo);
+}
+
+void geraraInfoCandidatosReprovados(){
 
 }
 
-void alterarNotaRedacao()
-{
+void alterarNotaRedacao(){
 
 }
 
-int main() {
+int main(){
     int input = -1;
     int arquivos_carregados = 0;
     while (input != 5)
